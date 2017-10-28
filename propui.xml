@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+    <ScriptPackage>
+        <Script isActive="yes" isFolder="no">
+            <name>Inv</name>
+            <packageName></packageName>
+            <script>
+createMiniConsole(&quot;inv&quot;, 2600, 150, 800, 1000)
+setBackgroundColor(&quot;inv&quot;,0,0,0,0)
+setMiniConsoleFontSize(&quot;inv&quot;, 12)
+setWindowWrap(&quot;inv&quot;, 40)
+
+</script>
+            <eventHandlerList/>
+        </Script>
+    </ScriptPackage>
+</MudletPackage>
