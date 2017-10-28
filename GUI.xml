@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+    <ScriptPackage>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>GUI</name>
+            <packageName></packageName>
+            <script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>HP Bar</name>
+                <packageName></packageName>
+                <script>hpbar = Geyser.Gauge:new({
+name = &quot;hpbar&quot;,
+x = &quot;2%&quot;, y = &quot;90%&quot;,
+width = &quot;20%&quot;, height = &quot;5%&quot;,
+})
+
+hpbar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
+    border-radius: 7;
+    padding: 3px;]])
+hpbar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 7;
+    padding: 3px;]])</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>Left Layout</name>
+                <packageName></packageName>
+                <script>setBorderLeft(500)
+left_container = Geyser.Container:new({
+  name = &quot;left_container&quot;,    -- give it a unique name here
+  x=0, y=0,                   -- have it start at the top-left corner of mudlet
+  width = 500, height=&quot;100%&quot;, -- with a width of 200, and a height of the full screen, hence 100%
+})
+
+</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+    </ScriptPackage>
+</MudletPackage>
