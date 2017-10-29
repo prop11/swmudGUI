@@ -104,6 +104,7 @@ exp:setValue(current_exp, current_exp, &quot;&lt;b&gt;&quot;..current_exp..&quot
 
 local exp = current_exp
 
+
 </script>
                 <triggerType>0</triggerType>
                 <conditonLineDelta>0</conditonLineDelta>
@@ -121,6 +122,30 @@ local exp = current_exp
                 <regexCodePropertyList>
                     <integer>1</integer>
                 </regexCodePropertyList>
+                <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <name>Ammo</name>
+                    <script>current_ammo, max_ammo = tonumber(matches[8]), tonumber(matches[9])
+ammobar:setValue(current_ammo, max_ammo, &quot;&lt;b&gt;&quot;..current_ammo..&quot; Ammo&lt;/b&gt;&quot;)
+
+local ammo = current_ammo
+</script>
+                    <triggerType>0</triggerType>
+                    <conditonLineDelta>0</conditonLineDelta>
+                    <mStayOpen>0</mStayOpen>
+                    <mCommand></mCommand>
+                    <packageName></packageName>
+                    <mFgColor>#ff0000</mFgColor>
+                    <mBgColor>#ffff00</mBgColor>
+                    <mSoundFile></mSoundFile>
+                    <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                    <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                    <regexCodeList>
+                        <string>^(\d+)/(\d+) (\d+)/(\d+) (\d+) (\d+) (\d+)/(\d+)</string>
+                    </regexCodeList>
+                    <regexCodePropertyList>
+                        <integer>1</integer>
+                    </regexCodePropertyList>
+                </Trigger>
             </TriggerGroup>
             <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                 <name>Inv</name>
@@ -2135,6 +2160,30 @@ exp.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0
     border-radius: 7;
     padding: 3px;]])
 exp.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #000000, stop: 0.1 #000000, stop: 0.49 #000000, stop: 0.5 #000000, stop: 1 #000000);
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 7;
+    padding: 3px;]])</script>
+                            <eventHandlerList/>
+                        </Script>
+                        <Script isActive="yes" isFolder="no">
+                            <name>Ammo Bar</name>
+                            <packageName></packageName>
+                            <script>ammobar = Geyser.Gauge:new({
+name = &quot;ammobar&quot;,
+x = &quot;1%&quot;, y = &quot;84%&quot;,
+width = &quot;3.5%&quot;, height = &quot;11%&quot;,
+orientation = &quot;vertical&quot;,
+})
+
+ammobar.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ad7535, stop: 0.1 #ad7535, stop: 0.49 #ad7535, stop: 0.5 #a36723, stop: 1 #c17824);
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
+    border-radius: 7;
+    padding: 3px;]])
+ammobar.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #7c4e18, stop: 0.1 #8e5718, stop: 0.49 #7a552a, stop: 0.5 #684721, stop: 1 #684721);
     border-width: 1px;
     border-color: black;
     border-style: solid;
