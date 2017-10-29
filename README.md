@@ -9,3 +9,9 @@ Install
 5. Choose Install
 6. Navigate to your desktop and choose propui.trigger
 7. You should be good to go, press Enter on the main window to refresh your game.
+
+
+
+// Credits \\
+
+Alex Woods - prop11 
